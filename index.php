@@ -1,6 +1,11 @@
 <?php
 $is_auth = rand(0, 1);
 $user_name = 'Даниил'; // укажите здесь ваше имя
+function formatAmount(int|float $price): string
+{
+    $price = number_format($price, 0, '.', ' ');
+    return $price . ' ₽';
+}
 $categories = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
 $lots = [
     [
@@ -39,7 +44,7 @@ $lots = [
         'price' => 5400,
         'pic' => 'img/lot-6.jpg'
     ]
-];
+ ];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -115,7 +120,7 @@ $lots = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount"><?=$value['price']; ?></span>
-                            <span class="lot__cost">цена<b class="rub">р</b></span>
+                            <span class="lot__cost"><?= formatAmount($value["price"]) ?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
