@@ -1,6 +1,11 @@
 <?php
 $is_auth = rand(0, 1);
 $user_name = 'Даниил'; // укажите здесь ваше имя
+/**
+ * Форматирует cумму лота и добавляет знак рубля
+ * @param int|float $price
+ * @return string
+ */
 function formatAmount(int|float $price): string
 {
     $price = number_format($price, 0, '.', ' ');
@@ -109,18 +114,18 @@ $lots = [
         </div>
         <ul class="lots__list">
             <!--заполните этот список из массива с товарами-->
-            <?php foreach ($lots as $value): ?>
+            <?php foreach ($lots as $lot): ?>
             <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src="<?=$value['pic']; ?>" width="350" height="260" alt="<?=$value['title']; ?>">
+                    <img src="<?=$lot['pic']; ?>" width="350" height="260" alt="<?=$lot['title']; ?>">
                 </div>
                 <div class="lot__info">
-                    <span class="lot__category"><?=$value['сategory']; ?></span>
-                    <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?=$value['title']; ?></a></h3>
+                    <span class="lot__category"><?=$lot['сategory']; ?></span>
+                    <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?=$lot['title']; ?></a></h3>
                     <div class="lot__state">
                         <div class="lot__rate">
-                            <span class="lot__amount"><?=$value['price']; ?></span>
-                            <span class="lot__cost"><?= formatAmount($value["price"]) ?></span>
+                            <span class="lot__amount"><?=$lot['price']; ?></span>
+                            <span class="lot__cost"><?= formatAmount($lot["price"]) ?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
