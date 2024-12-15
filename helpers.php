@@ -19,12 +19,17 @@ function is_date_valid(string $date) : bool {
 
     return $dateTimeObj !== false && array_sum(date_get_last_errors()) === 0;
 }
-//Функция форматирующая сумму
+/**
+ * Форматирует cумму лота и добавляет знак рубля
+ * @param int|float $price
+ * @return string
+ */
 function formatAmount(int|float $price): string
 {
     $price = number_format($price, 0, '.', ' ');
     return $price . ' ₽';
 }
+
 /**
  * Создает подготовленное выражение на основе готового SQL запроса и переданных данных
  *
