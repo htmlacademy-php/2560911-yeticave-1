@@ -21,6 +21,17 @@ function is_date_valid(string $date) : bool {
 }
 
 /**
+ * Форматирует cумму лота и добавляет знак рубля
+ * @param int|float $price
+ * @return string
+ */
+function formatAmount(int|float $price): string
+{
+    $price = number_format($price, 0, '.', ' ');
+    return $price . ' ₽';
+}
+
+/**
  * Создает подготовленное выражение на основе готового SQL запроса и переданных данных
  *
  * @param $link mysqli Ресурс соединения
