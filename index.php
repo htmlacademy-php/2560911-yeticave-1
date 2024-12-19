@@ -1,6 +1,6 @@
 <?php
-$is_auth = rand(0, 1);
-$user_name = 'Даниил'; // укажите здесь ваше имя
+$isAuth = rand(0, 1);
+$userName = 'Даниил'; // укажите здесь ваше имя
 /**
  * Форматирует cумму лота и добавляет знак рубля
  * @param int|float $price
@@ -75,9 +75,9 @@ $lots = [
         <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
 
         <nav class="user-menu">
-        <?php if ($is_auth===1): ?>
+        <?php if ($isAuth===1): ?>
             <div class="user-menu__logged">
-                <p><?=$user_name; ?></p>
+                <p><?=$userName; ?></p>
                 <a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
                 <a class="user-menu__logout" href="#">Выход</a>
             </div>
